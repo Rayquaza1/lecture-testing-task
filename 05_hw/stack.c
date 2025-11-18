@@ -5,6 +5,10 @@
 
 Node* createNode(int data) {
     Node* newNode = (Node*)malloc(sizeof(Node));
+	if (newNode == NULL){
+		printf("malloc failure");
+		exit(EXIT_FAILURE);
+	}
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
@@ -17,10 +21,11 @@ void initStack(Stack* stack) {
 void destroyStack(Stack* stack) {
     Node* current = stack->top;
     while (current != NULL) {
-        Node *tmp = current;
+        Node* tmp = current;
         current = current->next;
 	    free(tmp);
     }
+	stack->top = NULL;
 }
 
 void push(Stack* stack, int data) {
@@ -30,8 +35,13 @@ void push(Stack* stack, int data) {
 }
 
 void pop(Stack* stack) {
+	if (stack->top == NULL){
+		printf("Attempting to pop an empty stack\n");
+		return;
+	}
     Node* temp = stack->top;
     stack->top = stack->top->next;
+	free(temp);
 }
 
 Node* searchByValue(Stack* stack, int value) {
@@ -40,6 +50,7 @@ Node* searchByValue(Stack* stack, int value) {
         if (current->data == value) {
             return current;
         }
+		current = current->next;
     }
     return NULL;
 }
@@ -72,7 +83,6 @@ void traverseStack(Stack* stack) {
 }
 
 bool isEmpty(Stack* stack) {
-    free(stack->top);
     return stack->top == NULL;
 }
 

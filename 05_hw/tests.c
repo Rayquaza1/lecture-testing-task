@@ -41,6 +41,8 @@ void test_push(){
     push(&stack, 1);
     assert(stack.top != NULL);
 
+    destroyStack(&stack);
+
     printf("test_push() passed\n");
 
 }
@@ -55,6 +57,8 @@ void test_pop(){
     pop(&stack);
     assert(stack.top == NULL);
 
+    destroyStack(&stack);
+
     printf("test_pop() passed\n");
 
 }
@@ -65,6 +69,8 @@ void test_pop_empty(){
     initStack(&stack);
 
     pop(&stack);
+
+    destroyStack(&stack);
 
     printf("test_pop_empty() passed\n");
 
@@ -84,6 +90,8 @@ void test_searchByValue_existing(){
     Node* result = searchByValue(&stack, 5);
     assert(result != NULL && result->data == 5);
 
+    destroyStack(&stack);
+
     printf("test_searchByValue_existing() passed\n");
 
 }
@@ -101,6 +109,8 @@ void test_searchByValue_nonexisting(){
     Node* result = searchByValue(&stack, 10);
     assert(result == NULL);
 
+    destroyStack(&stack);
+
     printf("test_searchByValue_nonexisting() passed\n");
 
 }
@@ -111,6 +121,8 @@ void test_searchByValue_empty(){
 
     Node* result = searchByValue(&stack, 10);
     assert(result == NULL);
+
+    destroyStack(&stack);
 
     printf("test_searchByValue_empty() passed\n");
 
@@ -130,6 +142,8 @@ void test_searchByIndex_existing(){
     Node* result = searchByIndex(&stack, 2);
     assert(result != NULL && result->data == 3);
 
+    destroyStack(&stack);
+
     printf("test_searchByIndex_existing() passed\n");
 
 }
@@ -147,6 +161,8 @@ void test_searchByIndex_nonexisting(){
     Node* result = searchByIndex(&stack, 10);
     assert(result == NULL);
 
+    destroyStack(&stack);
+
     printf("test_searchByIndex_nonexisting() passed\n");
 
 }
@@ -157,6 +173,8 @@ void test_searchByIndex_empty(){
 
     Node* result = searchByIndex(&stack, 10);
     assert(result == NULL);
+
+    destroyStack(&stack);
 
     printf("test_earchByIndex_empty() passed\n");
 
@@ -176,6 +194,8 @@ void test_getTop(){
     Node* result = getTop(&stack);
     assert(result != NULL && result->data == 5);
 
+    destroyStack(&stack);
+
     printf("test_getTop() passed\n");
 
 }
@@ -186,6 +206,8 @@ void test_getTop_empty(){
 
     Node* result = getTop(&stack);
     assert(result == NULL);
+
+    destroyStack(&stack);
 
     printf("test_getTop_empty() passed\n");
 
@@ -206,6 +228,8 @@ void test_traverseStack(){
     printf("Function output:");
     traverseStack(&stack);
 
+    destroyStack(&stack);
+
     printf("test_traverseStack() passed\n");
 
 }
@@ -217,6 +241,8 @@ void test_traverseStack_empty(){
     printf("Expected result: ' '\n");
     printf("Function output:");
     traverseStack(&stack);
+
+    destroyStack(&stack);
 
     printf("test_traverseStack_empty() passed\n");
 
@@ -235,6 +261,8 @@ void test_isEmpty(){
 
     assert(isEmpty(&stack) == false);
 
+    destroyStack(&stack);
+
     printf("test_isEmpty() passed\n");
 }
 
@@ -243,6 +271,8 @@ void test_isEmpty_empty(){
     initStack(&stack);
 
     assert(isEmpty(&stack) == true);
+
+    destroyStack(&stack);
 
     printf("test_isEmpty_empty() passed\n");
 }

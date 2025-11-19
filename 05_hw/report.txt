@@ -1,0 +1,17 @@
+Running: cppcheck --enable=all --template={"file":"{file}","line":{line},"column":{column},"severity":"{severity}","message":"{message}","id":"{id}"}, c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\main.c
+Checking c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\main.c ...
+
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\stack.h","line":3,"column":0,"severity":"information","message":"Include file: <stdbool.h> not found. Please note: Cppcheck does not need standard library headers to get proper results.","id":"missingIncludeSystem"},
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\main.c","line":3,"column":0,"severity":"information","message":"Include file: <stdio.h> not found. Please note: Cppcheck does not need standard library headers to get proper results.","id":"missingIncludeSystem"},
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\stack.c","line":1,"column":0,"severity":"information","message":"Include file: <stdio.h> not found. Please note: Cppcheck does not need standard library headers to get proper results.","id":"missingIncludeSystem"},
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\stack.c","line":2,"column":0,"severity":"information","message":"Include file: <stdlib.h> not found. Please note: Cppcheck does not need standard library headers to get proper results.","id":"missingIncludeSystem"},
+
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\main.c","line":22,"column":11,"severity":"style","message":"Variable 'searchResult' can be declared as pointer to const","id":"constVariablePointer"},
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\main.c","line":29,"column":11,"severity":"style","message":"Variable 'topElement' can be declared as pointer to const","id":"constVariablePointer"},
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\stack.c","line":71,"column":21,"severity":"style","message":"Parameter 'stack' can be declared as pointer to const","id":"constParameterPointer"},
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\stack.c","line":85,"column":21,"severity":"style","message":"Parameter 'stack' can be declared as pointer to const","id":"constParameterPointer"},
+
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\stack.c","line":21,"column":6,"severity":"style","message":"The function 'destroyStack' is never used.","id":"unusedFunction"},
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\stack.c","line":58,"column":7,"severity":"style","message":"The function 'searchByIndex' is never used.","id":"unusedFunction"},
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\stack.c","line":85,"column":6,"severity":"style","message":"The function 'isEmpty' is never used.","id":"unusedFunction"},
+{"file":"c:\Users\User\Desktop\works\lecture-testing-task-main\05_hw\stack.c","line":6,"column":7,"severity":"style","message":"The function 'createNode' should have static linkage since it is not used outside of its translation unit.","id":"staticFunction"},

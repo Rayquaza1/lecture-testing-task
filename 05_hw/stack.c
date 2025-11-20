@@ -68,7 +68,7 @@ Node* searchByIndex(Stack* stack, int index) {
     return NULL;
 }
 
-Node* getTop(const Stack* stack) {
+Node* getTop(Stack* const stack) {
     return stack->top;
 }
 
@@ -82,7 +82,7 @@ void traverseStack(Stack* stack) {
     printf("\n");
 }
 
-bool isEmpty(const Stack* stack) {
+bool isEmpty(Stack* const stack) {
     return stack->top == NULL;
 }
 

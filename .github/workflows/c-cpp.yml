@@ -23,8 +23,8 @@ jobs:
 
     - name: tests
       run: |
-        gcc -fsanitize=address 05_hw/tests.c -o 05_hw/tests.exe
-        ./05_hw/tests
+        gcc -fsanitize=address 05_hw/tests.c -o tests.exe
+        ./tests.exe
 
         
     
